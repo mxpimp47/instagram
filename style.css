@@ -1,9 +1,0 @@
-#target {
-	width:650px;
-	height:465px;
-	overflow: scroll;
-}
-#target li {
-	list-style: none;
-	float:left;
-}
