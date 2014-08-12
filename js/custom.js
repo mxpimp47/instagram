@@ -43,10 +43,9 @@
             });
         },
 
-        pagination: function () {
+        paginationClickEvent: function () {
             $('#next-button').click(function(){
-                var pageNext = $(this).pagination('pageNext'),
-                    paginationUrl = 'https://api.instagram.com/v1/users/self/feed?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&max_id=650122868851188382_240158815';
+                $.getJSON(insta.getFeedUrl(), insta.success);
             });
         },
 
@@ -54,6 +53,7 @@
             if (responseData.meta.code === 200) {
                 insta.renderGrams(responseData.data);
                 insta.modalClickEvent();
+                insta.paginationClickEvent();
             } else {
                 $('.results').html('<h1>An Error Occured</h1><p>' + responseData.meta.error_message + '</p>');
             }
