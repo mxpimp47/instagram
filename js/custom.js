@@ -43,12 +43,11 @@
 
         clickEvent: function () {
             $('a').click(function(){
-                var mediaId = $(this).data('mediaId'),
-                    mediaUrl = insta.getMediaUrl(mediaId);
+                var mediaId = $(this).data('mediaId');
 
                 $.ajax({
                     type: 'GET',
-                    url: mediaUrl,
+                    url: insta.getMediaUrl(mediaId),
                     dataType: 'json',
                     success: insta.renderModal
                 });
