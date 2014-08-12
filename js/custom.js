@@ -3,17 +3,19 @@
 
     var insta = {
 
-        apiUrl: 'https://api.instagram.com/v1/users/self/feed?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&count=20&callback=?',
 	config: {
 	    token: '4561657.2e000ed.e4291119239a421eb48e8fd24c58edac',
 	    count: 20
 	},
 
+	getFeedUrl: function () {
+            return 'https://api.instagram.com/v1/users/self/feed?access_token='+ this.config.token +'&count=' + this.config.count + '&callback=?';
+	},
 
         init: function () {
             $.ajax({
                 type: 'GET',
-                url: insta.apiUrl,
+                url: insta.getFeedUrl(),
                 dataType: 'json',
                 success: insta.success
             });
