@@ -36,7 +36,7 @@
             $('#myModal').html(html);
         },
 
-        clickEvent: function () {
+        modalClickEvent: function () {
             $('a').click(function(){
                 var mediaId = $(this).data('mediaId');
                 $.getJSON(insta.getMediaUrl(mediaId), insta.renderModal);
@@ -53,7 +53,7 @@
         success: function (responseData) {
             if (responseData.meta.code === 200) {
                 insta.renderGrams(responseData.data);
-                insta.clickEvent();
+                insta.modalClickEvent();
             } else {
                 $('.results').html('<h1>An Error Occured</h1><p>' + responseData.meta.error_message + '</p>');
             }
