@@ -17,12 +17,7 @@
 	},
 
         init: function () {
-            $.ajax({
-                type: 'GET',
-                url: insta.getFeedUrl(),
-                dataType: 'json',
-                success: insta.success
-            });
+            $.getJSON(insta.getFeedUrl(), insta.success);
         },
 
         renderGrams: function (grams) {
@@ -44,13 +39,7 @@
         clickEvent: function () {
             $('a').click(function(){
                 var mediaId = $(this).data('mediaId');
-
-                $.ajax({
-                    type: 'GET',
-                    url: insta.getMediaUrl(mediaId),
-                    dataType: 'json',
-                    success: insta.renderModal
-                });
+                $.getJSON(insta.getMediaUrl(mediaId), insta.renderModal);
             });
         },
 
