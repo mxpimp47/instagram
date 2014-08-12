@@ -1,8 +1,7 @@
 (function () {
     'use strict';
-    var insta = insta || {};
 
-    insta = {
+    var insta = {
 
         apiUrl: 'https://api.instagram.com/v1/users/self/feed?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&count=20&callback=?',
 
