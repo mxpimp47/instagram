@@ -43,9 +43,10 @@
             });
         },
 
-        paginationClickEvent: function () {
+        paginationClickEvent: function (responseData) {
+            var paginationUrl = responseData.pagination.next_url + '&callback=?';
             $('#next-button').click(function(){
-                $.getJSON(insta.getFeedUrl(), insta.success);
+                $.getJSON(paginationUrl, insta.success);
             });
         },
 
@@ -53,7 +54,7 @@
             if (responseData.meta.code === 200) {
                 insta.renderGrams(responseData.data);
                 insta.modalClickEvent();
-                insta.paginationClickEvent();
+                insta.paginationClickEvent(responseData);
             } else {
                 $('.results').html('<h1>An Error Occured</h1><p>' + responseData.meta.error_message + '</p>');
             }
