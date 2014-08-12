@@ -36,8 +36,8 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <img width="60" src="{{ user.profile_picture }}" alt="{{ user.username }}">
-              <h4 class="modal-title">{{ user.full_name }}</h4>
+            <img width="60" src="{{ user.profile_picture }}" alt="{{ user.username }}">
+            <h4 class="modal-title">{{ user.full_name }}</h4>
             <div style="overflow: hidden" class"caption">
               <p> {{ caption.text }} </p>
             </div>
@@ -47,9 +47,9 @@
             <div class="row">
               <div id="image-info" class="col-md-6">
                 {{#if videos}}
-                <video width="612" height="612" controls><source src="{{ videos.standard_resolution.url }}" type="video/mp4"></video>
+                  <video width="612" height="612" controls><source src="{{ videos.standard_resolution.url }}" type="video/mp4"></video>
                 {{else}}
-                <img class="img-responsive" src="{{ images.standard_resolution.url }}" />
+                  <img class="img-responsive" src="{{ images.standard_resolution.url }}" />
                 {{/if}}
               </div>
               <div id="comments" class="col-md-6">
@@ -62,9 +62,9 @@
                     {{username}}
                   {{/each}}
                 </div>
-                  {{#each comments.data}}
+                {{#each comments.data}}
                   <img width="40" height="40" src="{{ from.profile_picture }}"/><p><strong>@{{ from.username }}:</strong> {{text}} </p>
-                  {{/each}}
+                {{/each}}
               </div>
             </div>
           </div>
