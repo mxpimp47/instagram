@@ -3,18 +3,18 @@
 
     var insta = {
 
-	config: {
-	    token: '4561657.2e000ed.e4291119239a421eb48e8fd24c58edac',
-	    count: 20
-	},
+        config: {
+            token: '4561657.2e000ed.e4291119239a421eb48e8fd24c58edac',
+            count: 20
+        },
 
-	getFeedUrl: function () {
+        getFeedUrl: function () {
             return 'https://api.instagram.com/v1/users/self/feed?access_token='+ this.config.token + '&count=' + this.config.count + '&callback=?';
-	},
+        },
 
-	getMediaUrl: function (mediaId) {
-	    return 'https://api.instagram.com/v1/media/' + mediaId + '?access_token=' + this.config.token + '&callback=?';
-	},
+        getMediaUrl: function (mediaId) {
+            return 'https://api.instagram.com/v1/media/' + mediaId + '?access_token=' + this.config.token + '&callback=?';
+        },
 
         init: function () {
             $.getJSON(insta.getFeedUrl(), insta.success);
