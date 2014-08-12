@@ -9,7 +9,7 @@
 	},
 
 	getFeedUrl: function () {
-            return 'https://api.instagram.com/v1/users/self/feed?access_token='+ this.config.token +'&count=' + this.config.count + '&callback=?';
+            return 'https://api.instagram.com/v1/users/self/feed?access_token='+ this.config.token + '&count=' + this.config.count + '&callback=?';
 	},
 
 	getMediaUrl: function (mediaId) {
@@ -24,20 +24,23 @@
                 success: insta.success
             });
         },
+
         renderGrams: function (grams) {
-            var source   = $("#gram-template").html();
+            var source = $("#gram-template").html();
             var template = Handlebars.compile(source);
             $.each(grams, function(index, gram) {
                 var html = template(gram);
                 $('.results').append(html);
             });
         },
+
         renderModal: function (data) {
-            var source   = $("#modal-template").html();
+            var source = $("#modal-template").html();
             var template = Handlebars.compile(source);
             var html = template(data.data);
             $('#myModal').html(html);
         },
+
         clickEvent: function () {
             $('a').click(function(){
                 var mediaId = $(this).data('mediaId'),
