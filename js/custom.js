@@ -45,7 +45,7 @@
         pagination: function () {
             $('#next-button').click(function(){
                 var pageNext = $(this).pagination('pageNext'),
-                paginationUrl = 'https://api.instagram.com/v1/users/self/feed?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&max_id=650122868851188382_240158815';
+                    paginationUrl = 'https://api.instagram.com/v1/users/self/feed?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&max_id=650122868851188382_240158815';
             });
         },
 
