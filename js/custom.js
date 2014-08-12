@@ -12,6 +12,10 @@
             return 'https://api.instagram.com/v1/users/self/feed?access_token='+ this.config.token +'&count=' + this.config.count + '&callback=?';
 	},
 
+	getMediaUrl: function (mediaId) {
+	    return 'https://api.instagram.com/v1/media/' + mediaId + '?access_token=' + this.config.token + '&callback=?';
+	},
+
         init: function () {
             $.ajax({
                 type: 'GET',
@@ -37,7 +41,7 @@
         clickEvent: function () {
             $('a').click(function(){
                 var mediaId = $(this).data('mediaId'),
-                    mediaUrl = 'https://api.instagram.com/v1/media/' + mediaId + '?access_token=4561657.2e000ed.e4291119239a421eb48e8fd24c58edac&callback=?';
+                    mediaUrl = insta.getMediaUrl(mediaId);
 
                 $.ajax({
                     type: 'GET',
